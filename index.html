@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Hunter</title>
+  <!-- DaisyUI  -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <header>
+    <div class="form-control">
+      <label class="input-group justify-center py-16">
+        <input type="text" placeholder="Search your phone..." id="search-box"
+          class="input input-bordered w-2/4 lg:w-1/3 focus:outline-none" />
+        <span onclick="handleSearch()" class="font-bold bg-indigo-600 text-white hover:cursor-pointer">Search</span>
+      </label>
+    </div>
+  </header>
+  <main class="w-10/12 mx-auto">
+    <!-- Loader div  -->
+    <div id="loading" class="text-center pt-24 hidden">
+      <span class="loading loading-ring w-20"></span>
+    </div>
+    <!-- cards section  -->
+    <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- cards from js api here will be loaded -->
+    </div>
+    <div class="text-center">
+      <button id="show-all-btn" onclick="showAllHandler()" class="btn btn-primary my-10 hidden">Show All</button>
+    </div>
+  </main>
+  <!-- Open the modal using ID.showModal() method -->
+  <dialog id="show_modal" class="modal">
+    <form method="dialog" class="modal-box">
+      <div id="modal">
+        <!-- dynamic modal body  -->
+      </div>
+    </form>
+  </dialog>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
